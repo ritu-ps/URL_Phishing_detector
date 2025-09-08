@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Phishing Detector</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <h1>URL Phishing Detector</h1>
+            </div>
+            <p class="subtitle">Advanced threat detection system</p>
+        </header>
+
+        <main class="main-content">
+            <div class="input-section">
+                <div class="input-container">
+                    <i class="fas fa-globe input-icon"></i>
+                    <input 
+                        type="text" 
+                        id="urlInput" 
+                        placeholder="Enter URL to analyze (e.g., https://example.com)"
+                        class="url-input"
+                    >
+                    <button id="analyzeBtn" class="analyze-btn">
+                        <i class="fas fa-search"></i>
+                        Analyze
+                    </button>
+                </div>
+            </div>
+
+            <div id="loadingSection" class="loading-section hidden">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <p>Analyzing URL security...</p>
+                <small>Checking for phishing indicators</small>
+            </div>
+
+            <div id="resultsSection" class="results-section hidden">
+                <div class="result-card">
+                    <div class="result-header">
+                        <div class="result-icon">
+                            <i id="resultIcon" class="fas"></i>
+                        </div>
+                        <div class="result-info">
+                            <h3 id="resultTitle"></h3>
+                            <p id="resultDescription"></p>
+                        </div>
+                        <div class="risk-badge">
+                            <span id="riskLevel"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="confidence-section">
+                        <div class="confidence-header">
+                            <span>Threat Probability</span>
+                            <span id="confidenceValue"></span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-details">
+                    <h4><i class="fas fa-lock"></i> Detailed Security Analysis</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <span class="feature-label">URL Length</span>
+                            <span id="urlLength" class="feature-value"></span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Domain Age</span>
+                            <span id="domainAge" class="feature-value"></span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">SSL Certificate</span>
+                            <span id="sslStatus" class="feature-value"></span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Suspicious Keywords</span>
+                            <span id="suspiciousKeywords" class="feature-value"></span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Redirects</span>
+                            <span id="redirectCount" class="feature-value"></span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Risk Score</span>
+                            <span id="riskScore" class="feature-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
